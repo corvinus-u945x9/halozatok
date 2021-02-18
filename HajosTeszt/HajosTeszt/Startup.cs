@@ -31,7 +31,7 @@ namespace HajosTeszt
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
             options.DefaultFileNames.Add("cv.html");
-            app.UseDefaultFiles();
+            app.UseDefaultFiles(options);
             app.UseStaticFiles(); 
 
             app.UseRouting();
