@@ -1,0 +1,26 @@
+﻿
+
+body {background-color : green;}
+
+h1,h2{color: black;
+      text-align:center;
+}
+
+span.szin {font-style:italic;
+           color: blue;
+}
+
+div {margin: 20px;
+     padding: 30px;
+     border: 2px dotted white;
+}
+
+a {background-color: blue;
+   color: white;
+   border-radius: 20px;
+}
+
+li {color: aqua;}
+#listacim{font-style:italic;}
+
+.cim {color: red;}
