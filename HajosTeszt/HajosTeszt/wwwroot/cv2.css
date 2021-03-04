@@ -9,7 +9,7 @@ body {
 #cimek{
     text-align: center;
 }
-#főcimek{
+#főcim{
     color:aqua
 }
 #másodikcim {
@@ -43,4 +43,28 @@ li {
 
 .cim {
     color: red;
+}
+
+#felsorolás{
+    display:flex;
+}
+
+ol {
+    display: flex;
+    flex:1 1 auto;
+}
+
+filter {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        max-widht: 1000px;
+        margin: auto;
+    }
+    
 }
