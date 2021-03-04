@@ -1,0 +1,46 @@
+﻿
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: green;
+}
+
+#cimek{
+    text-align: center;
+}
+#főcimek{
+    color:aqua
+}
+#másodikcim {
+    color: black;
+}
+
+span.szin {
+    font-style: italic;
+    color: blue;
+}
+
+#felsorolás {
+    margin: 20px;
+    padding: 30px;
+    border: 2px dotted white;
+}
+
+a {
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+}
+
+li {
+    color: aqua;
+}
+
+#listacim {
+    font-style: italic;
+}
+
+.cim {
+    color: red;
+}

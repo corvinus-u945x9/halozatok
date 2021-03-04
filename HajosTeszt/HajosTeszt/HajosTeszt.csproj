@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\cv2.html" />
     <None Include="wwwroot\forma.css" />
+    <None Include="wwwroot\cv2.css" />
   </ItemGroup>
 
 </Project>
