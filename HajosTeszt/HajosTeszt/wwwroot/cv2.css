@@ -5,26 +5,14 @@
 body {
     background-color: green;
 }
-
-#cimek{
-    text-align: center;
-}
-#főcim{
-    color:aqua
-}
-#másodikcim {
+h1, h2 {
     color: black;
+    text-align: center;
 }
 
 span.szin {
     font-style: italic;
     color: blue;
-}
-
-#felsorolás {
-    margin: 20px;
-    padding: 30px;
-    border: 2px dotted white;
 }
 
 a {
@@ -45,26 +33,26 @@ li {
     color: red;
 }
 
-#felsorolás{
-    display:flex;
-}
-
-ol {
+#elsősor {
+    margin: 20px;
+    padding: 30px;
+    border: 2px dotted white;
     display: flex;
-    flex:1 1 auto;
-}
-
-filter {
-    display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
 }
 
-@media screen and (min-width: 800px) {
-    body {
-        display: flex;
-        flex-direction: column;
-        max-widht: 1000px;
-        margin: auto;
+
+
+@media screen and (min-width: 800px){
+    #elsősor{
+        flex-direction:row;
     }
-    
+    #szöveg {
+        flex: 1 1 80%;
+    }
+
+    #kép {
+        flex: 1 1 20%;
+    }
 }
