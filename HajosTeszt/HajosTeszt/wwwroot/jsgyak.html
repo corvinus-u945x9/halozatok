@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jsgyak.js"></script>
+
+    <style>
+        #szamsor {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .doboz {
+            height: 30px;
+            width: 30px;
+        }
+        #pascal{
+            text-align: center;
+            justify-content: center;
+        }
+        .szamsor2 {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: center;
+            letter-spacing: 20px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="szamsor"></div>
+    <div id="pascal"></div>
+    <script>
+        function faktorialis(n) {
+            let er = 1;
+            for (var i = 2; i <= n; i++) {
+                er = er * i;
+            }
+            return er;
+
+        }
+
+        let hovva = document.getElementById("pascal")
+        hovva.innerHTML = ""
+        for (var s = 0; s < 10; s++) {
+            let sor = document.createElement("div");
+            hovva.appendChild(sor)
+            sor.classList.add("szamsor2")
+
+            for (var o = 0; o <=s;o++) {
+                let szám = document.createElement("div")
+                sor.appendChild(szám)
+                szám.innerText = faktorialis(s) / (faktorialis(o) * faktorialis(s - o))
+            }
+        }
+    </script>
+    
+   </body>
+</html>
