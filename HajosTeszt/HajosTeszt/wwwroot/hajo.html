@@ -4,60 +4,72 @@
     <meta charset="utf-8" />
     <title>Hajó</title>
     <style>
-        html, body{
-            height:100%;
+        html, body {
+            height: 100%;
         }
+
         div {
             margin: 10px;
         }
-        #külső{
-            background-color:yellow;
-            height:100%;
-            display:flex;
+
+        #külső {
+            background-color: yellow;
+            height: 100%;
+            display: flex;
             flex-direction: column;
         }
+
         #Kérdés_szöveg {
             background-color: orange;
         }
+
         #középső {
             background-color: peachpuff;
             display: flex;
             flex-direction: row;
             flex-grow: 1;
         }
-        #válaszok{
-            flex-grow:1;
-            flex-shrink:1;
+
+        #válaszok {
+            flex-grow: 1;
+            flex-shrink: 1;
         }
+
         #vezérlő {
             background-color: orange;
             display: flex;
             flex-direction: row;
             flex-grow: 1 1 auto;
         }
+
         #Kép {
-            overflow:hidden;
+            overflow: hidden;
             flex-grow: 0;
             flex-shrink: 0;
         }
-        .gomb{
-            padding:20px;
-            width:80px;
-        }
-        .kérdés{
 
+        .gomb {
+            padding: 20px;
+            width: 80px;
         }
-        .kattintható:hover{
+
+        .kérdés {
+        }
+
+        .kattintható:hover {
             background-color: blue;
-            color:white;
+            color: white;
         }
-        .jó:hover{
-            background-color:green;
+
+        .jó {
+            background-color: green;
         }
-        .rossz:hover{
-            background-color:red;
+
+        .rossz {
+            background-color: red;
         }
     </style>
+    <script src="hetedik.js"></script>
 </head>
 <body>
     <div id="külső">
@@ -68,8 +80,8 @@
         <div id="középső">
             <div id="válaszok">
                 <div id="válasz1" class="kérdés kattintható"> Válasz1</div>
-                <div id="válasz2" class="kérdés kattintható jó"> Válasz2</div>
-                <div id="válasz3" class="kérdés kattintható rossz"> Válasz3</div>
+                <div id="válasz2" class="kérdés kattintható"> Válasz2</div>
+                <div id="válasz3" class="kérdés kattintható"> Válasz3</div>
             </div>
             <div id="Kép">
                 <img id="kép1" src="https://szoft1.comeback.hu/hajo/teszt-0050.jpg" />
@@ -77,8 +89,8 @@
         </div>
 
         <div id="vezérlő">
-            <div class="gomb kattintható">Vissza</div>
-            <div class="gomb kattintható">Előre</div>
+            <div id="vissza" class="gomb kattintható">Vissza</div>
+            <div id="elöre" class="gomb kattintható">Előre</div>
         </div>
     </div>
 </body>
