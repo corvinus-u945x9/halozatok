@@ -13,8 +13,8 @@ function kérdésBetöltés(id) {
                 return response.json()
             }
         })
-        .then(data => letöltésbef(data));        
-}   
+        .then(data => letöltésbef(data));
+}
 
 function letöltésbef(d) {
     console.log("siker")
@@ -32,7 +32,7 @@ function kérdésMegjelenítés(kérdés) {
     if (!kérdés.image == 0) {
         document.getElementById("kép1").src = "https://szoft1.comeback.hu/hajo/" + kérdés.image;
     }
-    
+
 }
 
 function osztálytisztitás() {
@@ -45,13 +45,13 @@ function osztálytisztitás() {
 }
 
 window.onload = function () {
-    kérdésBetöltés(kérdésSorSzám); 
+    kérdésBetöltés(kérdésSorSzám);
     document.getElementById("elöre").onclick = function () {
         kérdésSorSzám++
         kérdésBetöltés(kérdésSorSzám)
 
         osztálytisztitás()
-              
+
     }
     document.getElementById("vissza").onclick = function () {
         if (kérdésSorSzám != 0) {
@@ -59,7 +59,7 @@ window.onload = function () {
             kérdésBetöltés(kérdésSorSzám)
 
             osztálytisztitás()
-            
+
         }
     }
     document.getElementById("válasz1").onclick = function () {

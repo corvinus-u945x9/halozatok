@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="wwwroot\Program.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\cv2.html" />
     <None Include="wwwroot\forma.css" />
     <None Include="wwwroot\cv2.css" />
