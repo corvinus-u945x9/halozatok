@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * {
+            box-sizing: border-box;
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        html {
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        body {
+            background-color: darkseagreen;
+            padding: 0px;
+            margin: 0px;
+        }
+        #cim {
+            color: green;
+            text-align: center;
+        }
+        #felhasználók {
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+            background-color: sandybrown
+        }
+        #doboz {
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+            text-align: center
+        }
+        #köztes{
+            color:green;
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+        <div id="cim"><h1>Felhasználóink kedvenc italai:</h1></div>
+        <div>
+            <h2>Új felhasználó felvétele:</h2>
+            <input id="Name" type="text" placeholder="Felhasználó név" />
+            <input id="Drink" type="text" placeholder="Kedvenc ital" />
+        </div>
+        <button id="Add">Új felhasználó felvétele</button>
+        <div id="felhasználók">
+            <table  id="doboz" >
+                <tr>
+                    <td>
+                        <p id="felsorolás"></p>
+                    </td>
+                    <td>
+                        <p id="köztes"></p>
+                    </td>
+                    <td>
+                        <p id="felsorolásital"></p>
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h2>Felhasználó törlés:</h2>
+            <input id="DeletName" type="text" placeholder="Törlendő Név" />
+        </div>
+        <button id="Delet">Törlés</button>
+    </form>
+
+    <script>
+        document.getElementById("Add").addEventListener("click", () => {
+
+            let data = {
+                név: document.getElementById("Name").value,
+                ital: document.getElementById("Drink").value
+            }
+            fetch("api/felhasznalok",
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                }).then(x => {
+                    if (x.ok) {
+                        alert("Siker");
+
+                    }
+                    else {
+                        alert("Kudarc");
+                    }
+                });
+        });
+        
+        function Betöltés() {
+            fetch('api/felhasznalok')
+                .then(result => {
+                    if (!result.ok) {
+                        console.error(`Letöltés hibás: ${result.status}`);
+                        return null;
+                    }
+                    else {
+                        return result.json();
+                    }
+                })
+                .then(data => {
+                    for (var i = 0; i < data.length; i++) {
+                        let nyil = "==================>" 
+                        document.getElementById("felsorolás").innerHTML += data[i].név += "<br/>"
+                        document.getElementById("felsorolásital").innerHTML += data[i].ital += "<br/>"
+                        document.getElementById("köztes").innerHTML += nyil += "<br/>"
+                    }
+                })
+        }
+
+        window.onload = () => {
+            Betöltés(); 
+        }
+    </script>
+</body>
+</html>

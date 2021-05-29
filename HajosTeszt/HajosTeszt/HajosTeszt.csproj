@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="wwwroot\Program.cs" />
+    <Content Include="Program.cs" />
   </ItemGroup>
 
   <ItemGroup>

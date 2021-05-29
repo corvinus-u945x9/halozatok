@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -11,6 +12,8 @@
             <input id="jokeText" type="text" placeholder="Csak PC vicc" />
         </div>
         <button id="addButton">Új vicc felvétele</button>
+        <a href="Leadandó.html">ide a leadandohoz</a>
+        <p id="szöveg"></p>
     </form>
     <script>
         document.getElementById("addButton").addEventListener("click", () => {
@@ -34,7 +37,29 @@
                     else {
                         alert("Kudarc");
                     }
-                });	
+                });
+
+            function Betöltés() {
+                fetch('api/jokes')
+                    .then(result => {
+                        if (!result.ok) {
+                            console.error(`Letöltés hibás: ${result.status}`);
+                            return null;
+                        }
+                        else {
+                            return result.json();
+                        }
+                    })
+                    .then(data => {
+                        for (var i = 0; i < data.length; i++) {
+                            document.getElementById("szöveg").innerHTML += data[i].jokeText += "<br/>"
+                        }
+                    })
+            }
+
+            window.onload = () => {
+                Betöltés();
+            }
     </script>
 </body>
 </html>
